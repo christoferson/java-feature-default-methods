@@ -9,7 +9,7 @@ public class Rogue implements Adventurer {
 
 	@Override
 	public void embark(Journey journey) {
-		System.out.println(String.format("%s shadow stepping on %s", this.name(), journey.getName()));
+		System.out.println(String.format("Rouge '%s' shadow stepping on %s", this.name(), journey.getName()));
 	}
 
 }
