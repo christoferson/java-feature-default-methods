@@ -1,5 +1,11 @@
 package demo;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.StreamSupport;
+
 // Virtual extension or defender methods
 // declare a non-abstract method inside the interface
 // diamond problem
@@ -7,6 +13,10 @@ package demo;
 public class TryFeatureDefaultMethod {
 
 	public static void main(String[] args) {
+		
+		tryDefaultMethodInIterableForEach();
+		
+		tryDefaultMethodInCollectionStream();
 		
 		tryDefaultMethod();
 
@@ -16,8 +26,42 @@ public class TryFeatureDefaultMethod {
 
 	}
 	
+	// Default Method in Iterable For Each
+	private static  void tryDefaultMethodInIterableForEach() {
+		System.out.println("> TryDefaultMethod (Iterable)");
+		{
+			List<String> list = Arrays.asList("apple", "orange", "kiwi");
+			Iterable<String> iterable = list;
+			iterable.forEach(System.out::print);
+			System.out.println();
+			list.forEach(System.out::print);
+			System.out.println();
+		}
+		{
+			Iterable<String> iterable = Arrays.asList("apple", "orange", "kiwi");
+			Consumer<String> consumer = System.out::print;
+	        for (String str : iterable) { consumer.accept(str); }
+		}
+		{
+			Iterable<String> iterable = Arrays.asList("apple", "orange", "kiwi");
+	        for (String str : iterable) { System.out.print(str); }
+		}
+
+	}
+	
+	// Default Method in Collection Stream
+	private static  void tryDefaultMethodInCollectionStream() {
+		System.out.println("> TryDefaultMethod (CollectionStream)");
+		Collection<String> collection = Arrays.asList("apple", "orange", "kiwi");
+		collection.stream().forEach(System.out::print);
+		System.out.println();
+		StreamSupport.stream(collection.spliterator(), false).forEach(System.out::print);
+		System.out.println();
+	}
+	
 	// Calls default method embark
 	private static  void tryDefaultMethod() {
+		System.out.println("> TryDefaultMethod");
 		Journey journey = new Journey("The Phoenix on the Sword");
 		Adventurer adventurer = new Barbarian();
 		adventurer.embark(journey);
