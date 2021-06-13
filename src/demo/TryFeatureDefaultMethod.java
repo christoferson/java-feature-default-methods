@@ -24,6 +24,10 @@ public class TryFeatureDefaultMethod {
 		
 		tryOverrideDefaultMethodToResolveDiamondProblem();
 
+		tryRedeclareDefaultMethodOnInterface();
+		
+		tryOverrideDefaultMethodOnInterface();
+		
 	}
 	
 	// Default Method in Iterable For Each
@@ -84,5 +88,22 @@ public class TryFeatureDefaultMethod {
 		voyager.embark(journey);
 	}
 
-
+	// Redeclare default method to abstract virtual method
+	private static  void tryRedeclareDefaultMethodOnInterface() {
+		System.out.println("> TryRedeclareDefaultMethodOnInterface");
+		Journey journey = new Journey("Neptune's Gold");
+		SpaceAdventurer adventurer = new Astronaut();
+		adventurer.embark(journey);
+	}
+	
+	// Override default method in extending Interface
+	private static  void tryOverrideDefaultMethodOnInterface() {
+		System.out.println("> TryOverrideDefaultMethodOnInterface");
+		Inn inn = new Inn("Tavern Pluto");
+		Adventurer adventurer = new Priest();
+		adventurer.lodge(inn);
+		SpaceAdventurer spaceadventurer = new Astronaut();
+		spaceadventurer.lodge(inn);
+	}
+	
 }
