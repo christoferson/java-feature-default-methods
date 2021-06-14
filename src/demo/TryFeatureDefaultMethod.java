@@ -24,9 +24,9 @@ public class TryFeatureDefaultMethod {
 		
 		tryOverrideDefaultMethodToResolveDiamondProblem();
 
-		tryRedeclareDefaultMethodOnInterface();
+		tryRedeclareDefaultMethodAsAbstractOnChildInterface();
 		
-		tryOverrideDefaultMethodOnInterface();
+		tryOverrideDefaultMethodOnChildInterface();
 		
 	}
 	
@@ -73,6 +73,7 @@ public class TryFeatureDefaultMethod {
 	
 	// Overrides default method embark on implementing class Rogue
 	private static  void tryOverrideDefaultMethod() {
+		System.out.println("> TryOverrideDefaultMethod");
 		Journey journey = new Journey("The Phoenix on the Sword");
 		Adventurer adventurer = new Rogue();
 		adventurer.embark(journey);
@@ -81,6 +82,7 @@ public class TryFeatureDefaultMethod {
 	// Priest inherits both embark on Adventurer and Voyager resulting in Diamond Problem.
 	// Problem is resolved by specifying which embark to use via Voyager.super.embark(journey);
 	private static  void tryOverrideDefaultMethodToResolveDiamondProblem() {
+		System.out.println("> TryOverrideDefaultMethodToResolveDiamondProblem");
 		Journey journey = new Journey("The Phoenix on the Sword");
 		Adventurer adventurer = new Priest();
 		adventurer.embark(journey);
@@ -89,16 +91,16 @@ public class TryFeatureDefaultMethod {
 	}
 
 	// Redeclare default method to abstract virtual method
-	private static  void tryRedeclareDefaultMethodOnInterface() {
-		System.out.println("> TryRedeclareDefaultMethodOnInterface");
+	private static  void tryRedeclareDefaultMethodAsAbstractOnChildInterface() {
+		System.out.println("> TryRedeclareDefaultMethodAsAbstractOnChildInterface");
 		Journey journey = new Journey("Neptune's Gold");
 		SpaceAdventurer adventurer = new Astronaut();
 		adventurer.embark(journey);
 	}
 	
 	// Override default method in extending Interface
-	private static  void tryOverrideDefaultMethodOnInterface() {
-		System.out.println("> TryOverrideDefaultMethodOnInterface");
+	private static  void tryOverrideDefaultMethodOnChildInterface() {
+		System.out.println("> TryOverrideDefaultMethodOnChildInterface");
 		Inn inn = new Inn("Tavern Pluto");
 		Adventurer adventurer = new Priest();
 		adventurer.lodge(inn);

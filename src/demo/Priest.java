@@ -1,6 +1,7 @@
 package demo;
 
-// Duplicate default methods named embark with the parameters (Journey) and (Journey) are inherited from the types Voyager and Adventurer
+// Inherits both Adventurer.embark and Voyager.embark causing ambiguity / Diamond Problem
+// This class implements an override that designates Voyager.embark as the method to use, thereby resolving the conflict.
 public class Priest implements Adventurer, Voyager {
 
 	@Override

@@ -15,5 +15,13 @@ public interface Adventurer {
 		Objects.requireNonNull(inn);
 		System.out.println(String.format("%s is resting on %s", this.name(), inn.getName()));
 	}
+	
+	static void validate(Journey journey) {
+		Objects.requireNonNull(journey);
+		if (journey.getName().length() < 3) {
+			throw new IllegalArgumentException("Journey Name must be at least 3 characters.");
+		}
+	}
 
 }
+

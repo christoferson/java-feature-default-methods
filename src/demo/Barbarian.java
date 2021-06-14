@@ -8,3 +8,5 @@ public class Barbarian implements Adventurer {
 	}
 
 }
+
+
