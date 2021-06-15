@@ -12,4 +12,9 @@ public class Rogue implements Adventurer {
 		System.out.println(String.format("Rouge '%s' shadow stepping on %s", this.name(), journey.getName()));
 	}
 
+	@Override
+	public String board(Mount mount) {
+		return String.format("%s boarding %s", this.getClass().getCanonicalName(), mount.getName());
+	}
+
 }

@@ -9,9 +9,18 @@ public class Priest implements Adventurer, Voyager {
 		return "Athelstan";
 	}
 
+	// Duplicate default methods named embark with the parameters (Journey) and (Journey) are inherited from the types Voyager and Adventurer
 	@Override
 	public void embark(Journey journey) {
 		Voyager.super.embark(journey);
 	}
-	
+
+	@Override
+	public String board(Mount mount) {
+		return String.format("%s boarding %s", this.getClass().getCanonicalName(), mount.getName());
+	}
+
 }
+
+
+

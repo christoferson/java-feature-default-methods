@@ -6,6 +6,8 @@ public interface Adventurer {
 
 	String name();
 	
+	String board(Mount mount);
+	
 	default void embark(Journey journey) {
 		Objects.requireNonNull(journey);
 		System.out.println(String.format("%s embarking on %s", this.name(), journey.getName()));

@@ -12,4 +12,9 @@ public class Astronaut implements SpaceAdventurer {
 		System.out.println(String.format("Astronaut warping to %s", journey.getName()));
 	}
 
+	@Override
+	public String board(Mount mount) {
+		return String.format("%s boarding %s", this.getClass().getCanonicalName(), mount.getName());
+	}
+
 }

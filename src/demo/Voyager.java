@@ -3,6 +3,8 @@ package demo;
 import java.util.Objects;
 
 public interface Voyager {
+	
+	String board(Mount mount);
 
 	default void embark(Journey journey) {
 		Objects.requireNonNull(journey);
@@ -10,3 +12,6 @@ public interface Voyager {
 	}
 
 }
+
+
+

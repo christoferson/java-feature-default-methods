@@ -7,6 +7,11 @@ public class Barbarian implements Adventurer {
 		return "Conan";
 	}
 
+	@Override
+	public String board(Mount mount) {
+		return String.format("%s boarding %s", this.getClass().getCanonicalName(), mount.getName());
+	}
+
 }
 
 

@@ -28,6 +28,8 @@ public class TryFeatureDefaultMethod {
 		
 		tryOverrideDefaultMethodOnChildInterface();
 		
+		tryImplementAbstractMethodFromMultipleInterfaces();
+		
 	}
 	
 	// Default Method in Iterable For Each
@@ -107,5 +109,11 @@ public class TryFeatureDefaultMethod {
 		SpaceAdventurer spaceadventurer = new Astronaut();
 		spaceadventurer.lodge(inn);
 	}
-	
+
+	private static void tryImplementAbstractMethodFromMultipleInterfaces() {
+		System.out.println("> TryImplementAbstractMethodFromMultipleInterfaces");
+		Mount mount = new Mount("Camel");
+		Adventurer adventurer = new Priest();
+		System.out.println(adventurer.board(mount));
+	}
 }
