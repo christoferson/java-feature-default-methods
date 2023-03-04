@@ -33,6 +33,12 @@ public class TryFeatureDefaultMethod {
 	}
 	
 	// Default Method in Iterable For Each
+    //default void forEach(Consumer<? super T> action) {
+    //    Objects.requireNonNull(action);
+    //    for (T t : this) {
+    //        action.accept(t);
+    //    }
+    //}	
 	private static  void tryDefaultMethodInIterableForEach() {
 		System.out.println("> TryDefaultMethod (Iterable)");
 		{
@@ -56,6 +62,9 @@ public class TryFeatureDefaultMethod {
 	}
 	
 	// Default Method in Collection Stream
+    //default Stream<E> stream() {
+    //    return StreamSupport.stream(spliterator(), false);
+    //}
 	private static  void tryDefaultMethodInCollectionStream() {
 		System.out.println("> TryDefaultMethod (CollectionStream)");
 		Collection<String> collection = Arrays.asList("apple", "orange", "kiwi");
